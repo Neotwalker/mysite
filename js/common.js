@@ -57,7 +57,7 @@ $(function() {
 		],
 		mouseDrag: false,
 		smartSpeed: 750,
-		autoHeight: true,
+		// autoHeight: true,
 		loop: true
 	});
 
