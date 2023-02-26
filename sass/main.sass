@@ -18,29 +18,45 @@
 		box-sizing: border-box
 
 *::-webkit-input-placeholder
-	color: #666
+	color: $white
 	opacity: 1
 
 *:-moz-placeholder
-	color: #666
+	color: $white
 	opacity: 1
 
 *::-moz-placeholder
-	color: #666
+	color: $white
 	opacity: 1
 
 *:-ms-input-placeholder
-	color: #666
+	color: $white
 	opacity: 1
 
 body input:focus:required:invalid,
 body textarea:focus:required:invalid
-	color: #666
+	color: $red
+	border: 1px solid $red
 body input:required:valid,
 body textarea:required:valid
-	color: #666
+	color: $green
+	border: 1px solid $green
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus
+	border: 1px solid $green
+	-webkit-text-fill-color: $green
+	-webkit-box-shadow: 0 0 0px 1000px #2a1e70 inset
 
 html, body
+	overflow-x: hidden
 	height: 100%
 
 body
@@ -49,15 +65,23 @@ body
 	font-size: 16px
 	min-width: 320px
 	position: relative
-	line-height: 1.65
+	line-height: 1.45
 	font-family: $default-font
 	overflow-x: hidden
 	background-color: $background
 	color: $white
 
+input, textarea, button, select, option
+	font-family: $default-font
+
 .h2
 	font-size: 60px
 	letter-spacing: -1.8px
+
+.h3
+	letter-spacing: -0.5px
+
+.h1, .h2, .h3, .h4, .h5, .h6
 	color: $white
 	span
 		background-image: linear-gradient(#cbb26b, #cbb26b)
@@ -85,6 +109,9 @@ ul, li
 
 a
 	text-decoration: none
+	letter-spacing: 1px
+	span
+		letter-spacing: 1px
 
 .container
 	max-width: 1600px
@@ -94,12 +121,11 @@ a
 		padding-left: 35px
 		padding-right: 35px
 
-
 .menu
 	.list
 		display: flex
 		li
-			font-weight: 300
+			font-weight: 500
 			line-height: 1
 			&:first-child
 				a
@@ -111,7 +137,6 @@ a
 				text-transform: uppercase
 				white-space: nowrap
 				margin-left: 1.315em
-				opacity: 0.8
 				position: relative
 				overflow: hidden
 				&::after
@@ -161,6 +186,16 @@ a
 		background-color: darken($accent, 10%)
 	&:active
 		background-color: lighten($accent, 10%)
+	&--white
+		background-color: $white
+		color: $black
+		transition: all .3s ease
+		svg *
+			transition: fill .3s ease
+			fill: $black
+		&:hover
+			svg *
+				fill: $white
 
 .logo
 	a
@@ -194,6 +229,7 @@ a
 		animation-duration: 2.3s
 		animation-timing-function: cubic-bezier(.165,.84,.44,1)
 		flex-grow: 1
+		z-index: 1
 	&--menu
 		animation-duration: 5s
 		animation-timing-function: cubic-bezier(.25, .46, .45, .94)
@@ -219,10 +255,39 @@ a
 				height: 12px
 				*
 					fill: $white
+	.burger
+		cursor: pointer
+		display: none
+		height: 30px
+		overflow: hidden
+		position: relative
+		width: 30px
+		span
+			background-color: $white
+			height: 2px
+			left: 50%
+			position: absolute
+			top: 50%
+			transform: translate(-50%,-50%)
+			transition: all .3s ease
+			width: 25px
+			&:nth-of-type(2)
+				top: calc(50% - 6px)
+			&:nth-of-type(3)
+				top: calc(50% + 6px)
+		&.open
+			span
+				top: 50%
+				transform: translate(-50%) rotate(45deg)
+				&:nth-of-type(2)
+					display: none
+				&:nth-of-type(3)
+					top: 50%
+					transform: translate(-50%) rotate(-45deg)
 
 .arrows
 	position: absolute
-	height: 300px
+	height: 100%
 	top: 0
 	bottom: 0
 	display: flex
@@ -264,7 +329,9 @@ a
 		background-image: url(../img/bg-main.jpg)
 		background-position: center center
 		background-repeat: no-repeat
-		animation-timing-function: cubic-bezier(.165, .84, .44, 1)
+		animation-timing-function: cubic-bezier(.165, .84, .44, 1) !important
+		animation-duration: 4s !important
+		transition: background .3s, border .3s, border-radius .3s, box-shadow .3s
 		padding-top: 290px
 		margin-bottom: 0
 		height: 100vh
@@ -398,6 +465,7 @@ a
 			justify-content: space-between
 			position: relative
 			color: $white
+			gap: 40px
 			.icon
 				filter: blur(7px)
 				width: auto
@@ -414,7 +482,7 @@ a
 					z-index: -1
 				&-2
 					top: 120px
-					left: -20p
+					left: -20px
 				&-3
 					filter: blur(43px)
 					top: 100px
@@ -438,9 +506,13 @@ a
 						background-position: center 80%
 						background-size: 100% 10%
 				.button
+					animation-duration: 3s
 					margin-left: auto
-					height: fit-content
 					max-width: 300px
+					width: 100%
+					display: flex
+					align-items: center
+					justify-content: space-between
 			&--right
 				width: 50%
 				opacity: 1
@@ -641,10 +713,10 @@ a
 					animation-duration: 4s
 					animation-delay: .4s
 				&:nth-child(3)
-					animation-duration: 6s
+					animation-duration: 4s
 					animation-delay: .6s
 				&:last-child
-					animation-duration: 8s
+					animation-duration: 4s
 					animation-delay: .7s
 				&::before
 					content: ''
@@ -673,8 +745,8 @@ a
 					z-index: 0
 				.title
 					z-index: 1
-					min-height: 105px
-					border-bottom: 1px solid $white
+					min-height: 115px
+					border-bottom: 1px solid #cdcdcd61
 					padding-bottom: 10px
 					margin-bottom: 10px
 					.h3
@@ -739,7 +811,165 @@ a
 		.h2
 			text-align: center
 			margin-bottom: 40px
+	&--why
+		background-color: #2a1e70
+		margin-top: 100px
+		padding-bottom: 100px
+		padding-top: 100px
+		z-index: 1
+		position: relative
+		.h2, .h3
+			text-align: center
+		.buttons
+			display: flex
+			gap: 30px
+			justify-content: center
+			margin-top: 30px
+			.button
+				animation-duration: 3s
+	&--form
+		margin-top: 100px
+		position: relative
+		z-index: 2
+		.h2, .h3
+			line-height: 1
+		.h3
+			font-size: 80px
+			margin-bottom: 60px
+		.wrapper
+			display: flex
+			gap: 40px
+			position: relative
+			.icon
+				position: absolute
+				z-index: -1
+				&-1
+					left: 50px
+					filter: blur(7px)
+					width: 100px
+					height: 100px
+					background: $accent
+					top: 200px
+				&-2
+					background: transparent
+					background-image: url(../img/arrow_form.svg)
+					background-size: 100%
+					background-repeat: no-repeat
+					opacity: 1
+					filter: blur(0px)
+					z-index: 1
+					right: 0
+					left: auto
+					width: 160px
+					height: 90px
+					top: 10px
+					animation-delay: 2s
+					animation-delay: .7s
+					animation-duration: 4s
+				&-3
+					left: 95%
+					z-index: 1
+					bottom: 30%
+			&--left
+				flex: 1 1 calc(50% - 40px)
+				.info
+					position: sticky
+					top: 100px
+					.h4
+						font-size: 40px
+						font-weight: 600
+					.text
+						font-size: 24px
+						max-width: 380px
+			&--right
+				flex: 1 1 calc(50% - 40px)
+				position: relative
 
+form
+	display: flex
+	flex-direction: column
+	select, input, textarea
+		padding: 20px 24px
+		outline: none
+		border: none
+		border-radius: 10px
+		margin-bottom: 20px
+		width: 100%
+		background-color: #2a1e70
+		color: $white
+		font-size: 24px
+	&:focus
+		border:1px solid red
+		box-shadow: 0 0 10px #719ECE
+	textarea
+		height: 300px
+		resize: none
+	select
+		background-color: #2a1e70
+		font: inherit
+		letter-spacing: inherit
+		word-spacing: inherit
+		-moz-appearance: none
+		-webkit-appearance: none
+		appearance: none
+		&:not([multiple])
+			font-size: 24px
+			padding-right: 1.2em
+			background-repeat: no-repeat
+			background-position: calc(100% - 1em) 1.2em
+			background-size: 1em auto
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cpath d='M70.3 13.8L40 66.3 9.7 13.8z' fill='%23fff'%3E%3C/path%3E%3C/svg%3E")
+		&::-ms-expand
+			display: none
+		option
+			font-size: 24px
+			background-color: #2a1e70
+			&:first-child
+				display: none
+	.button
+		font-size: 24px
+		letter-spacing: 1px
+		width: fit-content
+		margin-left: auto
+		margin-top: 20px
+	.check
+		margin-bottom: 15px
+		position: relative
+		input
+			position: absolute
+			z-index: -1
+			opacity: 0
+			&:checked
+				&+label
+					&::before
+						border-color: $accent
+						background-color: $accent
+						background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e")
+			&+label
+				user-select: none
+				display: flex
+				align-items: center
+				line-height: normal
+				&::before
+					content: ''
+					display: inline-block
+					width: 40px
+					height: 40px
+					flex-shrink: 0
+					flex-grow: 0
+					border: 1px solid #adb5bd
+					border-radius: 5px
+					margin-right: 16px
+					background-repeat: no-repeat
+					background-position: center center
+					background-size: 50% 50%
+		label
+			font-weight: 500
+			color: #b9c1cc
+			a
+				color: #b9c1cc
+				text-transform: inherit
+				border-bottom: 1px solid #B9C1CC
 
 .reviews
 	.wrapper
@@ -748,6 +978,8 @@ a
 	&--carousel
 		z-index: 1
 		.item
+			animation-duration: 3s
+			animation-timing-function: cubic-bezier(.25,.46,.45,.94)
 			border-radius: 25px
 			background-color: $black
 			padding: 20px
@@ -786,6 +1018,7 @@ a
 			display: flex
 			align-items: center
 			justify-content: space-between
+			gap: 20px
 			.h3
 				margin: 0
 				font-weight: 500
@@ -800,7 +1033,6 @@ a
 				height: 51px
 		&__text
 			padding-top: 20px
-			margin-top: 30px
 			display: none
 			p
 				strong
@@ -817,6 +1049,73 @@ a
 					color: $white
 					svg *
 						fill: $white
+
+.footer
+	margin-top: 100px
+	padding-top: 100px
+	background-color: #2a1e70
+	.wrapper
+		padding-bottom: 60px
+		display: flex
+		.logo
+			flex-grow: 1
+			display: flex
+			margin-top: 60px
+			justify-content: center
+			align-items: flex-start
+			img
+				animation-duration: 3s
+				animation-timing-function: cubic-bezier(.77, 0, .175, 1)
+				overflow: hidden
+	&--menu
+		display: flex
+		flex-direction: column
+		animation-duration: 3s
+		color: $white
+		max-width: 250px
+		width: 100%
+		.title
+			font-size: 24px
+			font-weight: 600
+			margin-bottom: 20px
+		.list
+			li
+				cursor: pointer
+				margin-bottom: 10px
+				&:last-child
+					margin-bottom: 0
+				a
+					display: block
+					transition: all .3s ease
+					color: $white
+					font-size: 16px
+					opacity: 0.8
+				&:hover
+					a
+						color: $accent
+						opacity: 1
+		&.right
+			align-items: flex-end
+			text-align: right
+			animation-duration: 3s
+	.request
+		background: $background
+		padding: 30px 0
+		&--info
+			padding-bottom: 20px
+			border-bottom: 1px solid #cdcdcd61
+		&--wrapper
+			display: flex
+			align-items: center
+			justify-content: space-between
+			color: $white
+			margin-top: 20px
+			.tg
+				a
+					color: $white
+					transition: color .3s ease
+					&:hover
+						color: $accent
 
 .owl-stage
 	display: flex

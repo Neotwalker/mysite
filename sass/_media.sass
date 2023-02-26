@@ -3,24 +3,356 @@
 /*==========  Desktop First  ==========*/
 
 /* Large Devices, Wide Screens */
-@media only screen and (max-width : 1200px)
-	/**/
+@media only screen and (max-width : 1600px)
+	.container
+		max-width: 1430px
 
+
+@media only screen and (max-width : 1400px)
+	.container
+		max-width: 1160px
+		.row
+			padding-left: 20px
+			padding-right: 20px
+	.h2
+		font-size: 50px
+	.logo
+		a
+			max-width: 200px
+	.menu
+		.list
+			li
+				a
+					font-size: 14px
+	.button
+		font-size: 12px
+	.main
+		&--header
+			.title
+				&--wrapper
+					.h1
+						font-size: 80px
+		&--about
+			.wrapper
+				&--left
+					.button
+						margin-top: 20px
+					p
+						font-size: 22px
+		&--projects
+			.projects
+				&--item
+					.info
+						flex-wrap: wrap
+						display: flex
+						gap: 10px
+						font-size: 14px
+				&--more
+					.wrapper
+						.link
+							&--wrapper
+								padding: 35px 40px 0 20px
+								.text
+									font-size: 16px
+								.count
+									font-size: 100px
+									span
+										&:first-child
+											font-size: 120px
+		&--advantages
+			.list
+				.item
+					.title
+						.h3
+							font-size: 20px
+						.h4
+							font-size: 14px
+					ul li
+						font-size: 15px
+					.image img
+						height: 150px
+		&--form
+			.wrapper
+				&--left
+					.info
+						.text
+							.icon
+								width: 100px
+								height: 60px
+		form
+			.button
+				font-size: 14px
+
+@media only screen and (max-width : 1200px)
+	body
+		line-height: 1.25
+	.container
+		max-width: 970px
+	.header
+		.burger
+			display: block
+		&--menu
+			position: absolute
+			top: 0
+			right: 0
+			width: 100vw
+			height: 100vh
+			display: none
+			align-items: center
+			justify-content: center
+			overflow: hidden
+			animation-duration: initial
+			background: #2a1e70cc
+			.menu
+				margin-right: 0
+				width: 100%
+				.list
+					flex-direction: column
+					li
+						text-align: center
+						padding: 20px 0
+						font-weight: 500
+						transition: background-color .3s ease
+						a
+							font-size: 28px
+							margin-left: 0
+							&::after
+								height: 2px
+						&:hover
+							background-color: rgba(255,255,255,0.1)
+		&--button
+			display: flex
+			align-items: center
+			gap: 20px
+	.main
+		&--about
+			.wrapper
+				&--left
+					p
+						font-size: 18px
+		&--projects
+			.projects
+				&--item
+					height: 350px
+					.text
+						font-size: 16px
+		&--advantages
+			.list
+				flex-wrap: wrap
+				.item
+					flex: calc(50% - 30px)
+					min-height: 350px
+					&:before
+						height: 60%
+						width: 60%
+						left: 0
+						right: 0
+						bottom: 20px
+						top: auto
+					.title
+						min-height: 100px
+						.h3
+							font-size: 24px
+						.h4
+							font-size: 18px
+					ul li
+						font-size: 18px
+	form
+		input, select, textarea
+			font-size: 20px
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
-	/**/
-
+	.main
+		&--header
+			&::after
+				top: 1px
+			.row
+				padding-left: 100px
+			.title
+				&--wrapper
+					.h1
+						font-size: 60px
+						letter-spacing: -3.6px
+					.h2
+						font-size: 30px
+						letter-spacing: -0.8px
+		&--about, &--projects, &--advantages, &--reviews, &--faq
+			margin-top: 100px
+		&--form
+			.wrapper
+				.icon
+					animation-duration: 3s
+					&-1
+						top: 140px
+						left: 0
+						transform: rotate(45deg)
+						width: 50px
+						height: 50px
+		&--projects
+			.projects
+				&--item
+					overflow: inherit
+					&::before
+						top: -1px
+					.info
+						opacity: 1
+						top: 20px
+					.image
+						&::after
+							bottom: -2px
+							background: transparent linear-gradient(180deg,rgba(42,30,112,0),rgba(42,30,112,.51) 40%,#2a1e70)
+					.text
+						opacity: 1
+						bottom: 20px
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
-	/**/
-
+	.owl-stage
+		align-items: flex-start
+	.main
+		&--header
+			.title
+				&--wrapper
+					.h1
+						font-size: 80px
+			.row
+				padding-left: 50px
+			.icon
+				&-10,
+				&-12
+					left: -180px
+				&-11
+					right: -180px
+		&--about
+			.wrapper
+				flex-direction: column
+				.icon
+					&-2
+						top: 40%
+						z-index: 2
+						left: 2%
+				&--left
+					.button
+						margin-left: 0
+				&--right
+					width: 100%
+					.image
+						position: relative
+						img
+							display: block
+		&--projects
+			.projects
+				&--item
+					flex: calc(50% - 40px)
+					max-width: 50%
+					height: 400px
+					&:nth-child(2),
+					&:nth-child(5),
+					&:nth-child(4)
+						margin-top: 60px
+				&--more
+					max-width: 40%
+		&--reviews
+			.icon
+				&-1
+					top: -60px
+					left: 45%
+				&-2
+					top: 80px
+					left: 0
+					z-index: 1
+			.wrapper
+				overflow: initial
+			.arrows
+				width: fit-content
+				gap: 20px
+				right: 0
+				top: -120px
+				height: fit-content
+		&--advantages
+			.h2
+				max-width: 80%
+		&--form
+			.wrapper
+				flex-direction: column
+				&--left
+					.info
+						.text
+							.icon
+								transform: rotate(90deg)
+								right: 0
+								top: 30px
+	.reviews
+			&--carousel
+				.item
+					max-width: 100%
+					.texts
+						.review
+							font-size: 16px
+	.footer
+		&--menu
+			&:first-child
+				display: none
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
-	/**/
-
+	.h2
+		font-size: 40px
+	.main
+		&--projects
+			.projects
+				&--item
+					flex: 100%
+					max-width: 100%
+					margin-top: 0 !important
+				&--more
+					max-width: 70%
+		&--advantages
+			.container
+				.row
+					padding-right: 0
+			.list
+				flex-wrap: nowrap
+				overflow: auto
+				padding-right: 20px
+				.item
+					flex: 1 1 100%
+					min-width: 350px
+		&--reviews
+			.arrows
+				top: -100px
+		&--why
+			.buttons
+				flex-direction: column
+				.button
+					padding: 24px 36px
+					font-size: 18px
+	.reviews
+		&--carousel
+			.item
+				flex-direction: column
+	.arrows
+		&--prev, &--next
+			width: 40px
+			height: 40px
+	.faq
+		&--item
+			.title
+				.h3
+					font-size: 20px
+			&__text
+				font-size: 14px
+	.footer 
+		.wrapper
+			flex-direction: column
+			.logo
+				margin-top: 0
+				margin-bottom: 30px
+		&--menu
+			&.right
+				flex-grow: 1
+				max-width: 100%
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)

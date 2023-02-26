@@ -3,6 +3,8 @@ $accent: #CBB26B
 $white: #fff
 $background: #231769
 $black: #2a1e70
+$green: #61ce70
+$red: #cf2e2e
 
 .watch-animation
 	opacity: 0
@@ -150,3 +152,25 @@ $black: #2a1e70
 
 .slide-from-right
 	animation-name: SlideFromRight
+
+@keyframes SlideFromBot
+	from
+		transform: translateY(100%)
+	to
+		opacity: 1
+		transform: none
+
+.slide-from-bot
+	animation-name: SlideFromBot
+
+@keyframes PulseIn4
+	from
+		transform: scale3d(1, 1, 1) rotate(0deg)
+	50%
+		transform: scale3d(.9, .9, .9)
+	to
+		opacity: 1
+		transform: rotate(90deg)
+
+.pulse-in-4
+	animation-name: PulseIn4
