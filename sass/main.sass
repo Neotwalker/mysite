@@ -57,7 +57,8 @@ select:-webkit-autofill:focus
 
 html, body
 	overflow-x: hidden
-	height: 100%
+	&.overflow
+		overflow: hidden
 
 body
 	text-rendering: optimizelegibility
@@ -217,7 +218,7 @@ a
 		top: 0
 		left: 0
 		right: 0
-		z-index: 9
+		z-index: 13
 	&--widget__wrap
 		display: flex
 		width: 100%
@@ -334,7 +335,8 @@ a
 		transition: background .3s, border .3s, border-radius .3s, box-shadow .3s
 		padding-top: 290px
 		margin-bottom: 0
-		height: 100vh
+		min-height: 100vh
+		position: relative
 		.icon
 			display: inline-block
 			height: fit-content
@@ -430,7 +432,7 @@ a
 			background: transparent linear-gradient(180deg, #23176900 0%, #2317696E 65%, #231769 100%)
 			display: inline-block
 			position: absolute
-			top: 0
+			bottom: 0
 			left: 0
 		.title
 			position: relative
@@ -457,6 +459,8 @@ a
 					margin-top: 20px
 					span
 						display: block
+				.mobile
+					display: none
 	&--about
 		margin-top: 150px
 		margin-bottom: 0
@@ -514,6 +518,7 @@ a
 					align-items: center
 					justify-content: space-between
 			&--right
+				position: relative
 				width: 50%
 				opacity: 1
 				animation-duration: 3s
@@ -689,7 +694,7 @@ a
 		margin-top: 150px
 		overflow: hidden
 		.h2
-			max-width: 50%
+			max-width: 75%
 			line-height: 1.2em
 			margin-bottom: 40px
 		.list
@@ -808,6 +813,8 @@ a
 				right: -150px
 	&--faq
 		margin-top: 150px
+		position: relative
+		z-index: 2
 		.h2
 			text-align: center
 			margin-bottom: 40px
@@ -935,6 +942,7 @@ form
 	.check
 		margin-bottom: 15px
 		position: relative
+		cursor: pointer
 		input
 			position: absolute
 			z-index: -1
@@ -967,6 +975,7 @@ form
 			font-weight: 500
 			color: #b9c1cc
 			a
+				display: inline-block
 				color: #b9c1cc
 				text-transform: inherit
 				border-bottom: 1px solid #B9C1CC
@@ -1126,5 +1135,80 @@ form
 	height: 16px
 	*
 		fill: $white
+
+.top
+	position: fixed
+	bottom: 25px
+	right: -100px
+	background-color: #e0e0e0
+	z-index: 12
+	border-radius: 50%
+	width: 50px
+	height: 50px
+	display: flex
+	align-items: center
+	justify-content: center
+	cursor: pointer
+	transition: all .3s ease
+	svg 
+		transform: rotate(-90deg)
+		*
+			transition: fill .3s ease
+			fill: $black
+	&:hover
+		background-color: $accent
+		opacity: 1
+		svg *
+			fill: $white
+	&.active
+		right: 25px
+
+.modal
+	display: none
+	position: relative
+	z-index: 999999
+	&::before
+		content: ''
+		background: $black
+		position: fixed
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+		opacity: 0.7
+		z-index: 99999
+	&--wrapper
+		background-color: #231769
+		border-radius: 10px
+		position: fixed
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+		padding: 20px
+		max-width: 760px
+		height: fit-content
+		margin: auto
+		opacity: 1
+		z-index: 999999
+		.title
+			display: flex
+			flex-direction: column
+			margin-bottom: 30px
+			span
+				text-align: center
+				&:first-child
+					margin-bottom: 8px
+					font-size: 40px
+				&.info
+					font-size: 20px
+		form
+			input, textarea, select
+				font-size: 16px
+			textarea
+				height: 150px
+			.button
+				font-size: 16px
+				margin: 30px auto 0
 
 @import "media" // Всегда в конце

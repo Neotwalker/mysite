@@ -8,9 +8,10 @@ $(function() {
 		$(this).toggleClass('open');
 		if ($(this).hasClass('open')) {
 			$('.header--menu').fadeIn().css('display', 'flex');
+			$('html').css('overflow', 'hidden');
 		} else {
 			$('.header--menu').fadeOut();
-
+			$('html').css('overflow', '');
 		}
 	});
 
@@ -57,18 +58,20 @@ $(function() {
 
 	projects_more_link.observe(document.querySelector('.projects--more .link'));
 
-	const advantages = new IntersectionObserver(entries => {
-		entries.forEach(entry => {
-			if (entry.isIntersecting) {
-				entry.target.classList.add('fade-in-down-1');
-			}
+	if ($(window).width() > '480'){
+		const advantages = new IntersectionObserver(entries => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('fade-in-down-1');
+				}
+			});
 		});
-	});
-
-	const arr1 = document.querySelectorAll('.main--advantages .item');
-	arr1.forEach(i => {
-		observer.observe(i);
-	});
+	
+		const arr1 = document.querySelectorAll('.main--advantages .item');
+		arr1.forEach(i => {
+			observer.observe(i);
+		});
+	}
 
 	$('.reviews--carousel').owlCarousel({
 		items: 1,
@@ -171,15 +174,26 @@ $(function() {
 
 	why1.observe(document.querySelector('.main--why .button--white'));
 
-	const footer__logo = new IntersectionObserver(entries => {
-		entries.forEach(entry => {
-			if (entry.isIntersecting) {
-				entry.target.classList.add('slide-from-bot');
-			}
+	if ($(window).width() > '480'){
+		const footer__logo = new IntersectionObserver(entries => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('slide-from-bot');
+				}
+			});
 		});
-	});
-
-	footer__logo.observe(document.querySelector('.footer .logo img'));
+	
+		footer__logo.observe(document.querySelector('.footer .logo img'));
+	} else {
+		const footer__logo1 = new IntersectionObserver(entries => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('slide-from-right');
+				}
+			});
+		});
+		footer__logo1.observe(document.querySelector('.footer .logo img'));
+	}
 
 	const footer__menu_left = new IntersectionObserver(entries => {
 		entries.forEach(entry => {
@@ -200,5 +214,37 @@ $(function() {
 	});
 
 	footer__menu_right.observe(document.querySelector('.footer--menu.right'));
+
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > $(this).height()) {
+			$('.top').addClass('active');
+		} else {
+			$('.top').removeClass('active');
+		}
+	});
+
+	$('.top').click(function () {
+		$('html, body').stop().animate({scrollTop: 0}, 'slow', 'swing');
+	});
+
+	$('.modal--open').click(function () {
+		$('.submit__application').fadeIn();
+		$('html').addClass('overflow');
+		return false;
+	});
+	$(document).keydown(function(e) {
+		if (e.keyCode === 27) {
+			e.stopPropagation();
+			$('.modal').fadeOut();
+			$('html').removeClass('overflow');
+		}
+	});
+
+	$('.modal').click(function(e) {
+		if ($(e.target).closest('.modal--wrapper').length == 0) {
+			$(this).fadeOut();
+			$('html').removeClass('overflow');
+		}
+	});
 
 });
