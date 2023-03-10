@@ -35,9 +35,11 @@
 				<div class="row header--row">
 					<div class="header--widget__wrap">
 						<div class="header--logo logo fade-in-left-2">
-								<a class="logo" title="Webinar – Phlox Elementor WordPress Theme" href="index.html">
-									<img src="img/logo/logo.png" class="img-responsive" alt="" loading="lazy">
+								<a class="logo--link" title="На Главную" href="index.html">
+									<img src="img/logo/logo.png" class="img-responsive desktop" alt="Разработка сайтов любой сложности" loading="lazy">
+									<img src="img/logo/logo-mob.png" class="img-responsive mobile" alt="Разработка сайтов любой сложности" loading="lazy">
 								</a>
+								<a href="#modal" class="button mobile modal--open">Подать заявку</a>
 						</div>
 						<div class="header--menu fade-in">
 							<nav class="menu">
@@ -202,7 +204,7 @@
 							<p>
 								Наша команда экспертов веб-разработки готова помочь вам создать отличный сайт, который будет работать на вас 24/7. Мы также предлагаем услуги раскрутки сайта, чтобы он был узнаваем и доступен для ваших потенциальных клиентов.
 							</p>
-							<a href="#modal" class="button watch-animation modal--open">
+							<a href="#modal_connect" class="button watch-animation modal--connect">
 								<span>Связаться с нами</span>
 								<svg class="svg--icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M6.8801 1.1199L12.9688 7.2086L0.791771 7.20823L0 8L0.791659 8.79166L12.9683 8.79168L6.88002 14.88L8 16L14.8801 9.11989L15.2082 8.79177L16 8L14.88 6.88001L8 9.48178e-07L6.8801 1.1199Z" />
@@ -683,7 +685,7 @@
 								<path d="M6.8801 1.1199L12.9688 7.2086L0.791771 7.20823L0 8L0.791659 8.79166L12.9683 8.79168L6.88002 14.88L8 16L14.8801 9.11989L15.2082 8.79177L16 8L14.88 6.88001L8 9.48178e-07L6.8801 1.1199Z" />
 							</svg>
 						</a>
-						<a href="#work" class="button button--white watch-animation">
+						<a href="#work" class="button button--white watch-animation modal--work">
 							<span>Я хочу работать у вас</span>
 							<svg class="svg--icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M6.8801 1.1199L12.9688 7.2086L0.791771 7.20823L0 8L0.791659 8.79166L12.9683 8.79168L6.88002 14.88L8 16L14.8801 9.11989L15.2082 8.79177L16 8L14.88 6.88001L8 9.48178e-07L6.8801 1.1199Z" />
@@ -725,9 +727,9 @@
 						</div>
 						<div class="wrapper--right">
 							<form action="#" class="form">
-								<input type="text" name="name" placeholder="ФИО" required>
-								<input id="phone_1" type="tel" name="tel" placeholder="+7 (___)___-__-__" required>
-								<input type="email" name="email" placeholder="Email">
+								<input type="text" name="name" placeholder="Имя" required>
+								<input id="phone_1" type="tel" name="tel" placeholder="Телефон" required>
+								<input type="email" name="email" placeholder="E-mail">
 								<textarea name="info" id="info" cols="30" rows="10" placeholder="Какой продукт Вас заинтересовал? Опишите подробнее..."></textarea>
 								<div class="check">
 									<input type="checkbox" id="check" name="check">
@@ -785,7 +787,7 @@
 					<p class="request--info">Разработка, сопровождение и продвижение сайтов</p>
 					<div class="request--wrapper">
 						<div class="copyright">@ Все права защищены</div>
-						<div class="tg"><a href="//t.me/neotwalker_WebDev" target="_blank">@neotwalker_WebDev</a></div>
+						<div class="tg">Разработано: <a href="//t.me/neotwalker_WebDev" target="_blank">WebTech</a></div>
 					</div>
 				</div>
 			</div>
@@ -805,9 +807,9 @@
 				<span class="info">С вами свяжутся в ближайшее время!</span>
 			</div>
 			<form action="#" class="form">
-				<input type="text" name="name" placeholder="ФИО" required>
-				<input id="phone_1" type="tel" name="tel" placeholder="+7 (___)___-__-__" required>
-				<input type="email" name="email" placeholder="Email">
+				<input type="text" name="name" placeholder="Имя" required>
+				<input id="phone_1" type="tel" name="tel" placeholder="Телефон" required>
+				<input type="email" name="email" placeholder="E-mail">
 				<textarea name="info" id="info" cols="30" rows="10" placeholder="Какой продукт Вас заинтересовал? Опишите подробнее..."></textarea>
 				<div class="check">
 					<input type="checkbox" id="check1" name="check">
@@ -823,8 +825,52 @@
 		</div>
 	</div>
 
-	<div class="modal" id="work">
+	<div class="modal modal__connect" id="modal_connect">
+		<div class="modal--wrapper">
+			<div class="title">
+				<span>Свяжитесь с нами</span>
+			</div>
+			<form action="#" class="form">
+				<input type="text" name="name" placeholder="Имя" required>
+				<input id="phone_1" type="tel" name="tel" placeholder="Телефон" required>
+				<input type="email" name="email" placeholder="E-mail">
+				<div class="check">
+					<input type="checkbox" id="check1" name="check">
+					<label for="check1">
+						<span>
+							Даю согласие на обработку своих персональных данных в соответствии с 
+							<a href="#">Политикой о конфиденциальности</a>
+						</span>
+					</label>
+				</div>
+				<button class="button sticky-button">Отправить заявку</button>
+			</form>
+		</div>
+	</div>
 
+	<div class="modal modal__work" id="work">
+		<div class="modal--wrapper">
+			<div class="title">
+				<span>Свяжитесь с нами</span>
+				<span class="info">С вами свяжутся в ближайшее время!</span>
+			</div>
+			<form action="#" class="form">
+				<input type="text" name="name" placeholder="Имя" required>
+				<input id="phone_1" type="tel" name="tel" placeholder="Телефон" required>
+				<input type="email" name="email" placeholder="E-mail">
+				<textarea name="info" id="info" cols="30" rows="10" placeholder="Расскажи о себе"></textarea>
+				<div class="check">
+					<input type="checkbox" id="check1" name="check">
+					<label for="check1">
+						<span>
+							Даю согласие на обработку своих персональных данных в соответствии с 
+							<a href="#">Политикой о конфиденциальности</a>
+						</span>
+					</label>
+				</div>
+				<button class="button sticky-button">Отправить заявку</button>
+			</form>
+		</div>
 	</div>
 
 	<script src="js/scripts.min.js"></script>

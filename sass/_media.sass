@@ -162,6 +162,9 @@
 	form
 		input, select, textarea
 			font-size: 20px
+	.footer
+		.request
+			padding-bottom: 100px
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
@@ -205,6 +208,13 @@
 					.text
 						opacity: 1
 						bottom: 20px
+					&:hover
+						.image img
+							transform: scale(1)
+		&--reviews
+			.icon-2
+				left: 120px
+				top: 700px
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
@@ -321,6 +331,19 @@
 		font-size: 30px
 	.button
 		font-size: 14px
+	.logo
+		display: flex
+		align-items: center
+		&--link
+			max-width: 50px
+			height: 50px
+			img
+				max-width: 100%
+				height: 100%
+		.button
+			font-size: 12px
+			padding: 15px
+			margin-left: auto
 	.header
 		&--button
 			a.button
@@ -334,7 +357,8 @@
 				width: 100%
 				text-align: center
 				&--wrapper
-					animation-delay: 2s
+					animation-delay: 1s
+					animation-duration: 3s
 					.h1
 						font-size: 50px
 						letter-spacing: -2.6px
@@ -390,10 +414,7 @@
 		&--reviews
 			.icon
 				&-2
-					top: auto
-					left: auto
-					right: 0
-					bottom: 0
+					display: none
 			.arrows
 				top: -70px
 			.h2
@@ -453,7 +474,8 @@
 		.wrapper
 			flex-direction: column
 			.logo
-				margin-top: 0
+				max-width: 50%
+				margin: 0 auto
 				margin-bottom: 30px
 		&--menu
 			&.right
@@ -470,6 +492,12 @@
 						a
 							br
 								display: none
+		.request
+			padding-bottom: 30px
+			&--wrapper
+				flex-direction: column
+				align-items: flex-start
+				gap: 20px
 	form
 		.button
 			margin: 0 auto
@@ -496,7 +524,7 @@
 			form
 				input, textarea
 					margin-bottom: 10px
-					font-size: 12px
+					font-size: 14px
 					padding: 10px 14px
 				.button
 					margin-top: 15px

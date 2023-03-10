@@ -41,6 +41,18 @@ body input:required:valid,
 body textarea:required:valid
 	color: $green
 	border: 1px solid $green
+	
+:focus::-webkit-input-placeholder
+	color: transparent
+
+:focus::-moz-placeholder
+	color: transparent
+
+:focus:-moz-placeholder
+	color: transparent
+
+:focus:-ms-input-placeholder
+	color: transparent
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
@@ -199,7 +211,9 @@ a
 				fill: $white
 
 .logo
-	a
+	.mobile
+		display: none
+	&--link
 		width: auto
 		max-width: 250px
 		min-height: fit-content
@@ -606,8 +620,7 @@ a
 						width: 100%
 						min-height: 100%
 						object-fit: cover
-						border-bottom-left-radius: 28px
-						border-bottom-right-radius: 28px
+						border-radius: 28px
 				.info
 					transition: all .3s ease
 					position: absolute
@@ -804,6 +817,8 @@ a
 				left: -120px
 				z-index: -1
 			&-2
+				width: 90px
+				height: 90px
 				top: 500px
 				left: 185px
 				z-index: 1
