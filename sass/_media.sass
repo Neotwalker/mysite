@@ -102,7 +102,7 @@
 			justify-content: center
 			overflow: hidden
 			animation-duration: initial
-			background: #2a1e70cc
+			background: #2a1e70f2
 			.menu
 				margin-right: 0
 				width: 100%
@@ -163,8 +163,19 @@
 		input, select, textarea
 			font-size: 20px
 	.footer
-		.request
-			padding-bottom: 100px
+		.wrapper
+			.logo
+				max-width: 200px
+				.slogan
+					font-size: 11px
+		&--menu
+			&__bottom
+				&.mobile
+					margin-top: 0
+					align-items: flex-start
+			.list
+				li
+					font-size: 14px
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
@@ -215,6 +226,22 @@
 			.icon-2
 				left: 120px
 				top: 700px
+	.footer
+		.wrapper
+			flex-wrap: wrap
+			.logo
+				.slogan
+					display: none
+		&--menu
+			&__bottom
+				display: none
+				&.mobile
+					display: flex
+			.list
+				margin-left: 0
+				justify-content: space-between
+		.request
+			padding-bottom: 100px
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
@@ -322,8 +349,11 @@
 							font-size: 16px
 	.footer
 		&--menu
-			&:first-child
-				display: none
+			display: none
+		.wrapper
+			.logo
+				.slogan
+					display: block
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
@@ -334,16 +364,35 @@
 	.logo
 		display: flex
 		align-items: center
+		position: relative
 		&--link
 			max-width: 50px
 			height: 50px
+			position: relative
 			img
 				max-width: 100%
 				height: 100%
+				&.mobile
+					display: block
+					min-width: 50px
+					width: 50px
+					animation-delay: .3s
+					animation-duration: .2s
+					position: absolute
+					top: 0
+					left: 0
+				&.desktop
+					animation-delay: 1s
+					animation-duration: 1s
 		.button
+			right: 0
 			font-size: 12px
 			padding: 15px
 			margin-left: auto
+			position: absolute
+			display: none
+			animation-delay: .5s
+			animation-duration: 1s
 	.header
 		&--button
 			a.button
@@ -358,10 +407,12 @@
 				text-align: center
 				&--wrapper
 					animation-delay: 1s
-					animation-duration: 3s
+					animation-duration: 2s
 					.h1
 						font-size: 50px
 						letter-spacing: -2.6px
+					.h2
+						max-width: 80%
 					.button
 						max-width: 70%
 						display: flex
@@ -373,8 +424,7 @@
 			.wrapper
 				.icon
 					&-2
-						top: 55%
-						left: 0
+						display: none
 		&--projects
 			.projects
 				&--item
@@ -474,24 +524,13 @@
 		.wrapper
 			flex-direction: column
 			.logo
-				max-width: 50%
+				max-width: 70%
 				margin: 0 auto
 				margin-bottom: 30px
 		&--menu
-			&.right
-				flex-grow: 1
-				max-width: 100%
-				.title
-					display: block
-					width: 100%
-					text-align: center
-				.list
-					width: 100%
-					text-align: center
-					li
-						a
-							br
-								display: none
+			&__bottom
+				margin-left: 0
+				margin: 0 auto
 		.request
 			padding-bottom: 30px
 			&--wrapper
@@ -528,6 +567,7 @@
 					padding: 10px 14px
 				.button
 					margin-top: 15px
+					font-size: 14px
 				.check input + label
 					align-items: flex-start
 
@@ -535,6 +575,11 @@
 	.main
 		&--why
 			.buttons
+				max-width: 100%
+	.footer 
+		.wrapper
+			flex-direction: column
+			.logo
 				max-width: 100%
 
 /* Custom, iPhone Retina */
