@@ -38,12 +38,9 @@
 				</a>
 				<div class="header--list">
 					<ul class="list">
-						<li><a href="#">Главная</a></li>
-						<li><a href="#">Сайт под ключ</a></li>
-						<li><a href="#">Создание сайтов</a></li>
-						<li><a href="#projects">Проекты</a></li>
+						<li><a href="#services">Услуги</a></li>
 						<li><a href="#about">О нас</a></li>
-						<li><a href="#">Контакты</a></li>
+						<li><a href="#projects">Проекты</a></li>
 					</ul>
 					<button class="button">Оставить заявку</button>
 				</div>
@@ -54,55 +51,56 @@
 	<main class="main">
 		<section class="main--header">
 			<div class="container">
-				<div class="main--header__wrapper">
-					<div class="main--header__title">
-						<div class="h1">
-							<strong>Разработка и продвижение сайта под ВАШ бизнес</strong>
-							<span>Разработка и продвижение сайта под ВАШ бизнес</span>
+				<div class="row">
+					<div class="main--header__wrapper">
+						<div class="main--header__title">
+							<div class="h1">Комплексная разработка<br> и продвижение сайтов</div>
+							<div class="h3">Создаем удобные решения из&nbsp;различных отраслей бизнеса, с&nbsp;разным бюджетом и&nbsp;с&nbsp;разными бизнес-задачами.</div>
 						</div>
-						<div class="h3">Создаем удобные решения из&nbsp;различных отраслей бизнеса, с&nbsp;разным бюджетом и&nbsp;с&nbsp;разными бизнес-задачами.</div>
 					</div>
-				</div>
-				<div class="main--header__block">
-					<div class="main--header__image">
-						<img src="img/Illustration.svg" alt="Разработка и продвижение сайта под ВАШ бизнес">
+					<div class="main--header__block">
+						<div class="main--header__image">
+							<img src="img/Illustration.svg" alt="Разработка и продвижение сайта под ВАШ бизнес">
+						</div>
+						<form class="main--header__form bg--blur">
+							<div class="h4">Оставить заявку</div>
+							<input type="text" placeholder="ФИО" required>
+							<input type="tel" placeholder="Телефон" required>
+							<input type="email" placeholder="E-mail">
+							<input type="checkbox" class="custom-checkbox" id="check" name="check" value="yes">
+							<label class="check" for="check"><span>Я согласен на <a href="#">обработку персональных данных</a></span></label>
+							<button class="button">Отправить</button>
+						</form>
 					</div>
-					<form class="main--header__form bg--blur">
-						<div class="h4">Оставьте заявку и мы вам перезвоним!</div>
-						<input type="text" placeholder="ФИО" required>
-						<input type="tel" placeholder="Телефон" required>
-						<input type="email" placeholder="E-mail">
-						<input type="checkbox" class="custom-checkbox" id="check" name="check" value="yes">
-						<label class="check" for="check"><span>Я согласен на <a href="#">обработку персональных данных</a></span></label>
-						<button class="button">Отправить</button>
-					</form>
-				</div>
-				<div class="main--header__stages">
-					<div class="h2">Этапы работы</div>
-					<div class="main--header__stages--item">
-						<img src="" alt="">
-						<strong>Проектирование</strong>
-						<span>Продумываем все детали,<br> думаем об удобстве пользователей.</span>
-					</div>
-					<div class="main--header__stages--item">
-						<strong>Дизайн</strong>
-						<span>Создаем запоминающиеся<br> визуальные образы.</span>
-					</div>
-					<div class="main--header__stages--item">
-						<strong>Разработка</strong>
-						<span>Программируем быстрые сайты,<br> которые работают во всех браузерах.</span>
-					</div>
-					<div class="main--header__stages--item">
-						<strong>Наполнение</strong>
-						<span>Создаём страницы,<br> понятные людям и поисковым системам.</span>
-					</div>
+					<!-- <div class="main--header__stages">
+						<div class="h2">Этапы работы</div>
+						<div class="main--header__stages--wrapper">
+							<div class="main--header__stages--item">
+								<img src="" alt="">
+								<strong>Проектирование</strong>
+								<span>Продумываем все детали,<br> думаем об удобстве пользователей.</span>
+							</div>
+							<div class="main--header__stages--item">
+								<strong>Дизайн</strong>
+								<span>Создаем запоминающиеся<br> визуальные образы.</span>
+							</div>
+							<div class="main--header__stages--item">
+								<strong>Разработка</strong>
+								<span>Программируем быстрые сайты,<br> которые работают во всех браузерах.</span>
+							</div>
+							<div class="main--header__stages--item">
+								<strong>Наполнение</strong>
+								<span>Создаём страницы,<br> понятные людям и поисковым системам.</span>
+							</div>
+						</div>
+					</div> -->
 				</div>
 			</div>
 		</section>
-		<section class="main--directions">
+		<section class="main--directions" id="services">
 			<div class="container">
 				<div class="row">
-					<h2 class="h2"><a href="#">Направления</a> разработки</h2>
+					<h2 class="h2">Услуги</h2>
 					<div class="main--directions__wrapper">
 							<a href="#" class="main--directions__item bg--blur">
 								<div class="h3">Корпоративный сайт</div>
@@ -221,30 +219,18 @@
 				</div>
 			</div>
 		</section>
-		<section class="main--about">
+		<section class="main--about" id="about">
 			<div class="container">
 				<div class="row">
 					<div class="main--about__wrapper">
 						<div class="main--about__info">
-							<div class="h1">Разработка сайтов</div>
+							<div class="h2">Наши эксперты</div>
 							<div class="main--about__info--text">
 								<p>
-									Мы - компания UnderWeb, специализируемся на разработке уникальных сайтов, таких как корпоративные сайты,
-									интернет-магазины, сайты под ключ, сайты-визитки и лендинг пейдж. Также мы имеем более 5-летний опыт в этой сфере и наша
-									миссия заключается в создании функциональных и высококачественных сайтов для наших клиентов.
+									Мы в курсе последних тенденций и практик в разработке и продвижении сайтов, которые можем применить для Вашего бизнеса.
 								</p>
 								<p>
-									Однако наша компания не ограничивается только разработкой сайтов. Мы также предлагаем услуги по продвижению сайтов,
-									такие как SEO (оптимизация для поисковых систем), директ и контекстная реклама. Мы гарантируем выведение наших сайтов в
-									топ 5 поисковых систем, таких как Google и Яндекс.
-								</p>
-								<p>
-									Наш коллектив состоит из опытных и талантливых разработчиков и web-дизайнеров. Мы постоянно совершенствуем свои навыки и
-									следим за последними тенденциями в мире веб-разработки, чтобы предоставить нашим клиентам сайты наивысшего качества.
-								</p>
-								<p>
-									Если вам нужен надежный и профессиональный партнер для разработки и продвижения вашего сайта, обратитесь к нам в
-									компанию UnderWeb. Мы гарантируем эффективное и качественное решение для вашего бизнеса.
+									Наша команда состоит из опытных и талантливых дизайнеров, программистов, SEO-специалистов и др.
 								</p>
 							</div>
 							<a href="#" class="button button--big">Заказать звонок</a>
@@ -256,10 +242,10 @@
 				</div>
 			</div>
 		</section>
-		<section class="main--works">
+		<section class="main--works" id="projects">
 			<div class="container">
 				<div class="row">
-					<div class="h2">Наши работы</div>
+					<div class="h2">Проекты</div>
 					<div class="main--works__wrapper">
 						<a href="https://autoschool.dosaaf.ru/" class="main--works__item bg--blur" target="_blank">
 							<div class="main--works__item--bg" style="background-image: url(img/works/dosaaf.svg);"></div>
@@ -296,10 +282,43 @@
 				</div>
 			</div>
 		</section>
+		<div class="section main--form">
+			<div class="container">
+				<div class="row">
+					<div class="h2">Оставить заявку</div>
+					<form>
+						<input type="text" placeholder="ФИО" required="">
+						<input type="tel" placeholder="Телефон" required="">
+						<input type="email" placeholder="E-mail">
+						<input type="checkbox" class="custom-checkbox" id="check" name="check" value="yes">
+						<label class="check" for="check"><span>Я согласен на <a href="#">обработку персональных данных</a></span></label>
+						<button class="button">Отправить</button>
+					</form>
+				</div>
+			</div>
+		</div>
 	</main>
 
 	<footer class="footer">
-
+		<div class="container">
+			<div class="row">
+				<div class="footer--wrapper">
+					<div class="footer--logo">
+						Underweb or UW
+					</div>
+					<div class="footer--block">
+						<div class="footer--mail">
+							<span>Пишите</span>
+							<a href="mailto:and1marat9@gmail.com">and1marat9@gmail.com</a>
+						</div>
+						<div class="footer--copyright">
+							<span>© 2024</span>
+							<span>Все права защищены</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</footer>
 
 	<ul class="social">
@@ -331,7 +350,6 @@
 				</svg>
 			</a>
 		</li>
-		<div class="social--text">Напишите нам</div>
 	</ul>
 	<div id="circle" class="mover"></div>
 	<script src="js/scripts.min.js"></script>
